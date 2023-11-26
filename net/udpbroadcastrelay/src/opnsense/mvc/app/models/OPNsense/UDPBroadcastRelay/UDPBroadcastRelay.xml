@@ -1,6 +1,6 @@
 <model>
     <mount>//OPNsense/udpbroadcastrelays</mount>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <description>UDP Broadcast Relay settings</description>
     <items>
         <udpbroadcastrelay type="ArrayField">
@@ -43,6 +43,16 @@
                 <Default>0</Default>
                 <Required>Y</Required>
             </RevertTTL>
+            <msearch type="OptionField">
+                <Default>fwd</Default>
+                <Required>Y</Required>
+                <OptionValues>
+                    <block>block</block>
+                    <fwd>fwd</fwd>
+                    <proxy>proxy</proxy>
+                    <dial>dial</dial>
+                </OptionValues>
+            </msearch>
             <description type="TextField">
                 <Mask>/^([\t\n\v\f\r 0-9a-zA-Z.,_\x{00A0}-\x{FFFF}]){1,255}$/u</Mask>
                 <ValidationMessage>Enter a description.</ValidationMessage>
